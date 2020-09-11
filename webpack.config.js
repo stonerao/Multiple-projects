@@ -63,9 +63,11 @@ if (mode.mode === 'development') {
 
 const _Config = {
     ...mode,
+    stats: 'none',
     devServer: {
         contentBase: './dist',
-        hot: true
+        hot: true,
+        noInfo: true
     },
     entry: {
         ...EntryJS,
@@ -177,8 +179,8 @@ const _Config = {
         ],
     },
     output: {
-        filename: 'js/[name].[id].js',
-        chunkFilename: 'js/[name].[id].js',
+        filename: '[name]/js/[name].[id].js',
+        chunkFilename: '[name]/js/[name].[id].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
 
